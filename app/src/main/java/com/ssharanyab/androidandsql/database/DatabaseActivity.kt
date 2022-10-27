@@ -30,6 +30,7 @@ class DatabaseActivity : AppCompatActivity() {
                 adapter=ArrayAdapter(this@DatabaseActivity,android.R.layout.simple_list_item_1,userList)
                 list.adapter=adapter
             }
+            
             list.onItemLongClickListener = AdapterView.OnItemLongClickListener { _, _, index, _ ->
                 dbHelper.deleteUser(userModelList[index].id)
                 Toast.makeText(applicationContext, "deleted ${userModelList[index].name} ", Toast.LENGTH_SHORT).show()
